@@ -1,0 +1,48 @@
+name: cls
+version: 0.0.1
+author: Tencent Cloud, Inc.
+org: Tencent Cloud, Inc.
+description: Manage Tencent CLS
+keywords: tencent, serverless, cls
+repo: https://github.com/serverless-components/tencent-cls
+readme: https://github.com/serverless-components/tencent-cls/tree/master/README.md
+license: MIT
+main: ./src
+
+actions:
+  deploy:
+    definition: Deploy CLS
+    inputs:
+      name:
+        type: string
+        description: cls name
+        required: true
+      topic:
+        type: string
+        description: cls topic name
+        required: true
+      period:
+        type: number
+        description: cls store number of days
+        mix: 1
+        max: 90
+      region:
+        type: string
+        description: cls region
+        default: ap-guangzhou
+        allow:
+          - ap-guangzhou
+          - ap-shanghai
+          - ap-beijing
+          - ap-nanjing
+          - ap-chengdu
+          - ap-chongqing
+          - ap-hongkong
+          - ap-singapore
+          - ap-mumbai
+          - ap-seoul
+          - ap-tokyo
+          - na-siliconvalley
+          - eu-frankfurt
+  remove:
+    definition: Remove CLS
