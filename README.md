@@ -44,7 +44,7 @@ inputs:
 在 `serverless.yml` 文件所在的项目根目录，运行以下指令，将会弹出二维码，直接扫码授权进行部署:
 
 ```
-serverless deploy
+$ serverless deploy
 ```
 
 > **说明**：如果鉴权失败，请参考 [权限配置](https://cloud.tencent.com/document/product/1154/43006) 进行授权。
@@ -54,7 +54,7 @@ serverless deploy
 执行以下命令，查看您部署的项目信息：
 
 ```
-serverless info
+$ serverless info
 ```
 
 #### 移除
@@ -62,7 +62,7 @@ serverless info
 执行以下命令，移除您已经部署的项目：
 
 ```
-serverless remove
+$ serverless remove
 ```
 
 ### 账号权限
