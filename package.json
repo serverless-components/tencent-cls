@@ -1,5 +1,5 @@
 {
-  "name": "@serverless/express",
+  "name": "@serverless/cls",
   "main": "src/serverless.js",
   "publishConfig": {
     "access": "public"
@@ -45,7 +45,6 @@
     "@semantic-release/release-notes-generator": "^9.0.1",
     "@serverless/platform-client-china": "^1.0.19",
     "@ygkit/secure": "0.0.3",
-    "axios": "^0.19.2",
     "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
@@ -58,7 +57,7 @@
     "prettier": "^1.19.1",
     "semantic-release": "^17.0.4"
   },
-  "description": "Easily deploy serverless Express.js applications to Tencent Cloud with the Serverless Framework",
+  "description": "Tencent CLS component",
   "directories": {
     "doc": "docs",
     "example": "example",
@@ -66,18 +65,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/serverless-components/tencent-express.git"
+    "url": "git+https://github.com/serverless-components/tencent-cls.git"
   },
   "keywords": [
-    "serverless-express",
+    "serverless-cls",
     "serverless",
-    "express",
+    "cls",
     "serverless-framework",
     "serverless-components",
     "tencent-cloud"
   ],
   "bugs": {
-    "url": "https://github.com/serverless-components/tencent-express/issues"
+    "url": "https://github.com/serverless-components/tencent-cls/issues"
   },
-  "homepage": "https://github.com/serverless-components/tencent-express#readme"
+  "homepage": "https://github.com/serverless-components/tencent-cls#readme"
 }
