@@ -24,7 +24,7 @@ actions:
       period:
         type: number
         description: cls store number of days
-        mix: 1
+        min: 1
         max: 90
       region:
         type: string
