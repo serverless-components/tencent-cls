@@ -74,10 +74,6 @@ $ serverless remove
 
 配置详情可参考 [权限配置](https://cloud.tencent.com/document/product/1154/43006)。
 
-### 开发调试
-
-在 `serverless.yml`文件所在的目录下运行 `serverless dev` 可以实时输出云端日志，每次部署完毕后，对项目进行访问，即可在命令行中实时输出调用日志，便于查看业务情况和排障。nodejs 支持开启开发调试能力，将会对本地代码的改动进行检测和自动上传。详情请参考 [开发与调试](https://cloud.tencent.com/document/product/1154/43220)。
-
 ### 应用管理
 
 Serverless 部署一个组件实例实质是部署了一个单组件实例的应用。
