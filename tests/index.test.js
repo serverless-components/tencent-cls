@@ -2,7 +2,7 @@ const path = require('path')
 require('dotenv').config({
   path: path.join(__dirname, '..', '.env.test')
 })
-const { generateId, getServerlessSdk } = require('./utils')
+const { generateId, getServerlessSdk } = require('./lib/utils')
 
 const instanceYaml = {
   org: 'orgDemo',
