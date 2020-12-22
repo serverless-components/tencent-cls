@@ -21,7 +21,8 @@ const CONFIGS = {
         'SCF_Type',
         'SCF_LogTime',
         'SCF_StatusCode',
-        'SCF_Alias'
+        'SCF_Alias',
+        'SCF_RetryNum'
       ],
       types: [
         'text',
@@ -36,10 +37,26 @@ const CONFIGS = {
         'text',
         'long',
         'long',
-        'text'
+        'text',
+        'long'
       ],
-      tokenizers: ['', '', '', '', '', '', '', '', '', '', '', '', ''],
-      sql_flags: [true, true, true, true, true, true, true, true, true, true, true, true, true]
+      tokenizers: ['', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+      sql_flags: [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
     }
   }
 }
