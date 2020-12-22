@@ -1,3 +1,10 @@
+## [0.0.4](https://github.com/serverless-components/tencent-cls/compare/v0.0.3...v0.0.4) (2020-12-22)
+
+
+### Bug Fixes
+
+* update default rules ([7495e4e](https://github.com/serverless-components/tencent-cls/commit/7495e4ed0495d3ed2381d54b9bbf758eda5eafcf))
+
 ## [0.0.3](https://github.com/serverless-components/tencent-cls/compare/v0.0.2...v0.0.3) (2020-12-11)
 
 
