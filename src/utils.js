@@ -20,13 +20,33 @@ const initializeInputs = async (instance, inputs = {}) => {
   const { state } = instance
   const region = inputs.region || CONFIGS.region
 
+  let { rule } = inputs
+  if (rule) {
+    const { key_value } = rule
+    const { keys } = deepClone(key_value)
+    key_value.keys = []
+    key_value.types = []
+    key_value.sql_flags = []
+    key_value.tokenizers = []
+    keys.forEach((item) => {
+      key_value.keys.push(item.name)
+      key_value.types.push(item.type || 'text')
+      key_value.sql_flags.push(item.sql_flag === undefined ? false : item.sql_flag)
+      key_value.tokenizers.push(item.tokenizer || '')
+    })
+    rule.key_value = key_value
+  } else {
+    ;({ rule } = CONFIGS)
+  }
   const clsInputs = {
     logsetId: state.logsetId,
     topicId: state.topicId,
     name: inputs.name,
     topic: inputs.topic,
     period: inputs.period || CONFIGS.period,
-    rule: inputs.rule || CONFIGS.rule
+    rule: rule,
+    alarms: inputs.alarms || [],
+    dashboard: inputs.dashboard
   }
 
   return {

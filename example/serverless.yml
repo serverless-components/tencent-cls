@@ -1,7 +1,3 @@
-org: orgDemo
-app: appDemo
-stage: dev
-
 component: cls
 name: clsDemo
 
@@ -10,3 +6,38 @@ inputs:
   topic: cls-topic-test
   region: ap-guangzhou
   period: 7
+  rule:
+    # 全文索引配置
+    full_text:
+      # 大小写是否敏感
+      case_sensitive: true
+      # 全文分词符
+      tokenizer: "@&()='\",;:<>[]{}/ \n\t\r"
+    # 键值索引
+    key_value:
+      # 大小写是否敏感
+      case_sensitive: true
+      # 键列表
+      keys:
+        - name: SCF_RequestId
+          type: text
+          sql_flag: true
+        - name: SCF_MemUsage
+          type: double
+          sql_flag: true
+  # alarms:
+  #   - name: error-count # 告警名称
+  #     # 通知模板 ID
+  #     noticeId: notice-xxx
+  #     targets: # 监控规则
+  #       - period: 15 # 查询时间范围，单位为分钟，默认为15分钟
+  #         query: '* | select count(*) as count' # 分析语句
+  #     monitor: # 监控周期
+  #       type: Period # 固定频率
+  #       time: 1 # 每隔多少分钟查询一次
+  #       # type: Fixed # 固定时间
+  #       # time: 601 # 每天 10:00 执行
+  #     trigger: # 告警策略
+  #       condition: '$1.count > 1' # 告警频率
+  #       count: 1 # 告警频率
+  #       period: 10 # 如果持续指定 count，则每 10 分钟告警一次

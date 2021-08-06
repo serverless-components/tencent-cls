@@ -4,7 +4,7 @@ const CONFIGS = {
   rule: {
     full_text: {
       case_sensitive: true,
-      tokenizer: '!@#%^&*()_="\', <>/?|\\;:\n\t\r[]{}'
+      tokenizer: '@&()=\'",;:<>[]{}/ \n\t\r'
     },
     key_value: {
       case_sensitive: true,
