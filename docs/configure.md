@@ -38,7 +38,7 @@ inputs:
         - period: 15 # 查询时间范围，单位为分钟，默认为15分钟
           query: 'level:error | select count(*) as errCount' # 分析语句
       trigger: # 告警策略
-        condition: '$1.count > 1' # 触发条件
+        condition: '$1.errCount > 1' # 触发条件
         count: 1 # 告警频率
         period: 10 # 如果持续指定 count，则每 10 分钟告警一次
       monitor: # 监控周期
