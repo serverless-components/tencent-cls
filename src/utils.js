@@ -23,7 +23,8 @@ const initializeInputs = async (instance, inputs = {}) => {
   let { rule } = inputs
   if (rule) {
     const { key_value } = rule
-    const { keys } = deepClone(key_value)
+    const { keys, case_sensitive = true } = deepClone(key_value)
+    key_value.case_sensitive = case_sensitive
     key_value.keys = []
     key_value.types = []
     key_value.sql_flags = []
