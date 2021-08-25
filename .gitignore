@@ -21,3 +21,4 @@ env.js
 package-lock.json
 test
 yarn.lock
+lib

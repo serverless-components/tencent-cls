@@ -1,4 +1,4 @@
-const CONFIGS = {
+export const CONFIGS = {
   region: 'ap-guangzhou',
   period: 7,
   rule: {
@@ -61,4 +61,3 @@ const CONFIGS = {
   }
 }
 
-module.exports = CONFIGS
