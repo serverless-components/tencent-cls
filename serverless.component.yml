@@ -1,5 +1,5 @@
 name: cls
-version: 0.0.4
+version: dev
 author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
 description: Manage Tencent CLS
@@ -7,7 +7,7 @@ keywords: tencent, serverless, cls
 repo: https://github.com/serverless-components/tencent-cls
 readme: https://github.com/serverless-components/tencent-cls/tree/master/README.md
 license: MIT
-main: ./src
+main: ./lib
 
 actions:
   deploy:

@@ -55,7 +55,8 @@
     "jest": "^25.0.1",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
-    "semantic-release": "^17.0.4"
+    "semantic-release": "^17.0.4",
+    "typescript": "^4.3.5"
   },
   "description": "Tencent CLS component",
   "directories": {
