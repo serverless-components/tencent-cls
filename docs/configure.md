@@ -46,6 +46,27 @@ inputs:
         time: 1 # 每隔多少分钟查询一次
         # type: Fixed # 固定时间
         # time: 601 # 每天 10:00 执行
+  dashboards:
+    - name: example-dashboard
+      charts:
+        - title: log-count-table
+          query: '* | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as analytic_time, count(*) as log_count group by analytic_time order by analytic_time limit 1000'
+          type: 'table'
+        - title: log-count-graph
+          query: '* | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as analytic_time, count(*) as log_count group by analytic_time order by analytic_time limit 1000'
+          type: 'graph'
+        - title: log-count-bar
+          query: '* | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as analytic_time, count(*) as log_count group by analytic_time order by analytic_time limit 1000'
+          type: 'bar'
+        - title: log-count-stat
+          query: '* | select count(*) as log_count'
+          type: 'stat'
+        - title: log-count-gauge
+          query: '* | select count(*) as log_count'
+          type: 'gauge'
+        - title: log-count-pie
+          query: '* | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as analytic_time, count(*) as log_count group by analytic_time order by analytic_time limit 1000'
+          type: 'pie'
 ```
 
 ## 配置描述

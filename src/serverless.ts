@@ -1,9 +1,20 @@
+
 const { Component } = require('@serverless/core')
-const { Cls } = require('tencent-component-toolkit')
-const { ApiError } = require('tencent-component-toolkit/lib/utils/error')
-const { initializeInputs } = require('./utils')
+
+import { DeployInputs } from "./utils"
+import { Cls } from 'tencent-component-toolkit';
+import { ApiError } from 'tencent-component-toolkit/lib/utils/error';
+import { initializeInputs } from './utils';
+
+export interface State {
+  region?: string;
+  logsetId?: string;
+  topicId?: string;
+}
 
 class ServerlessComponent extends Component {
+  state: State = {};
+  _tmpCredentials: { SecretId: string; SecretKey: string; Token: string; } = {} as never;
   getCredentials() {
     const { tmpSecrets } = this.credentials.tencent
 
@@ -27,21 +38,21 @@ class ServerlessComponent extends Component {
   }
 
   initialize() {
-    this.__TmpCredentials = this.getCredentials()
+    this._tmpCredentials = this.getCredentials()
   }
 
-  async deploy(inputs) {
+  async deploy(inputs: DeployInputs) {
     this.initialize()
-    const { __TmpCredentials } = this
+    const { _tmpCredentials: __TmpCredentials } = this
 
     const { region, clsInputs } = await initializeInputs(this, inputs)
 
     const client = new Cls(__TmpCredentials, region)
 
-    const res = await client.deploy(clsInputs)
+    console.log(clsInputs);
+    const res = await client.deploy(clsInputs);
 
     const outputs = {
-      region,
       ...res,
       period: clsInputs.period
     }
@@ -53,7 +64,7 @@ class ServerlessComponent extends Component {
 
   async remove() {
     this.initialize()
-    const { __TmpCredentials, state } = this
+    const { _tmpCredentials: __TmpCredentials, state } = this
 
     const { region } = state
 

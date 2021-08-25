@@ -7,7 +7,7 @@ keywords: tencent, serverless, cls
 repo: https://github.com/serverless-components/tencent-cls
 readme: https://github.com/serverless-components/tencent-cls/tree/master/README.md
 license: MIT
-main: ./src
+main: ./lib
 
 actions:
   deploy:
