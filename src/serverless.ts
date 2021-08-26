@@ -49,7 +49,6 @@ class ServerlessComponent extends Component {
 
     const client = new Cls(__TmpCredentials, region)
 
-    console.log(clsInputs);
     const res = await client.deploy(clsInputs);
 
     const outputs = {
