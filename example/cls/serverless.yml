@@ -1,30 +1,30 @@
-component: cls@dev
+component: cls
 name: clsDemo
 
 inputs:
-  name: serverless-app
-  topic: serverless-app
+  name: serverless-test
+  topic: serverless-test
   region: ap-guangzhou
   period: 7
-  rule:
+  indexRule:
     # 全文索引配置
-    full_text:
+    fullText:
       # 大小写是否敏感
-      case_sensitive: true
+      caseSensitive: true
       # 全文分词符
       tokenizer: "@&()='\",;:<>[]{}/ \n\t\r"
     # 键值索引
-    key_value:
+    keyValue:
       # 大小写是否敏感
-      case_sensitive: true
+      caseSensitive: true
       # 键列表
       keys:
-        - name: SCF_RequestId
+        - key: SCF_RequestId
           type: text
-          sql_flag: true
-        - name: SCF_MemUsage
+          sqlFlag: true
+        - key: SCF_MemUsage
           type: double
-          sql_flag: true
+          sqlFlag: true
   dashboards:
     - name: example-dashboard
       charts:
@@ -46,19 +46,19 @@ inputs:
         - title: log-count-pie
           query: '* | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as analytic_time, count(*) as log_count group by analytic_time order by analytic_time limit 1000'
           type: 'pie'
-  alarms:
-    - name: error-count # 告警名称
-      # 通知模板 ID
-      noticeId: notice-90f79fa5-f0ae-4808-8285-507e594daeb3
-      targets: # 监控规则
-        - period: 15 # 查询时间范围，单位为分钟，默认为15分钟
-          query: '* | select count(*) as count' # 分析语句
-      monitor: # 监控周期
-        type: Period # 固定频率
-        time: 1 # 每隔多少分钟查询一次
-        # type: Fixed # 固定时间
-        # time: 601 # 每天 10:00 执行
-      trigger: # 告警策略
-        condition: '$1.count > 1' # 告警频率
-        count: 1 # 告警频率
-        period: 10 # 如果持续指定 count，则每 10 分钟告警一次
+  # alarms:
+  #   - name: error-count # 告警名称
+  #     # 通知模板 ID
+  #     noticeId: notice-xxx
+  #     targets: # 监控规则
+  #       - period: 15 # 查询时间范围，单位为分钟，默认为15分钟
+  #         query: '* | select count(*) as count' # 分析语句
+  #     monitor: # 监控周期
+  #       type: Period # 固定频率
+  #       time: 1 # 每隔多少分钟查询一次
+  #       # type: Fixed # 固定时间
+  #       # time: 601 # 每天 10:00 执行
+  #     trigger: # 告警策略
+  #       condition: '$1.count > 1' # 告警频率
+  #       count: 1 # 告警频率
+  #       period: 10 # 如果持续指定 count，则每 10 分钟告警一次
