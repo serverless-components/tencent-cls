@@ -1,5 +1,5 @@
 name: cls
-version: 0.1.0
+version: 0.1.1
 author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
 description: CLS 网关组件， 允许用户创建部署一个日志服务(CLS)实例。配合项目需要管理腾讯云的 CLS 日志服务。
