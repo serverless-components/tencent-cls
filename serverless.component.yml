@@ -2,7 +2,7 @@ name: cls
 version: 0.1.0
 author: Tencent Cloud, Inc.
 org: Tencent Cloud, Inc.
-description: Manage Tencent CLS
+description: CLS 网关组件， 允许用户创建部署一个日志服务(CLS)实例。配合项目需要管理腾讯云的 CLS 日志服务。
 keywords: tencent, serverless, cls
 repo: https://github.com/serverless-components/tencent-cls
 readme: https://github.com/serverless-components/tencent-cls/tree/master/README.md
